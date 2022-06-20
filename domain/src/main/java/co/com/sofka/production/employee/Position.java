@@ -12,7 +12,7 @@ import co.com.sofka.production.general.values.Name;
  * Class that make reference to the position of an employee inside the company
  * 
  * @author Jose Cruz
- * @version 1.0
+ * @version 2.0
  */
 public class Position extends Entity<PositionId> {
     private Name name;
@@ -26,14 +26,29 @@ public class Position extends Entity<PositionId> {
         this.salary = salary;
     }
 
+    /**
+     * Method that updates the position name
+     * 
+     * @param name the new name
+     */
     protected void changeName(Name name) {
         this.name = Objects.requireNonNull(name);
     }
 
+    /**
+     * Method that updates the position description
+     * 
+     * @param description the new description
+     */
     protected void changeDescription(Description description) {
         this.description = Objects.requireNonNull(description);
     } 
 
+    /**
+     * Method that updates the position salary
+     * 
+     * @param salary the new salary
+     */
     protected void changeSalary(Salary salary) {
         this.salary = Objects.requireNonNull(salary);
     }

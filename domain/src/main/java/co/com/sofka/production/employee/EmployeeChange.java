@@ -15,6 +15,12 @@ import co.com.sofka.production.employee.events.UpdatedPositionDescription;
 import co.com.sofka.production.employee.events.UpdatedPositionName;
 import co.com.sofka.production.employee.events.UpdatedPositionSalary;
 
+/**
+ * Class that get all the events applied over an employee and make changes from these
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class EmployeeChange extends EventChange {
     public EmployeeChange(Employee employee) {
         apply((CreatedEmployee event) -> {

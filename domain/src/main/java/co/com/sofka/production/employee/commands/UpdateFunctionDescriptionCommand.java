@@ -5,6 +5,12 @@ import co.com.sofka.production.employee.values.EmployeeId;
 import co.com.sofka.production.employee.values.FunctionId;
 import co.com.sofka.production.general.values.Description;
 
+/**
+ * Class that acts like a command for update an employee function description
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class UpdateFunctionDescriptionCommand extends Command {
     private final EmployeeId employeeId;
     private final FunctionId functionId;

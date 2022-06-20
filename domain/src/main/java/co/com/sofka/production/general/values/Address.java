@@ -6,6 +6,12 @@ import java.util.Objects;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+/**
+ * Value object that contains the address info of a person
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class Address implements ValueObject<Map<String, String>> {
     private final String country;
     private final String city;

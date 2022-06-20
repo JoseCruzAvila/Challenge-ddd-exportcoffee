@@ -6,6 +6,12 @@ import co.com.sofka.production.employee.values.Salary;
 import co.com.sofka.production.general.values.Description;
 import co.com.sofka.production.general.values.Name;
 
+/**
+ * Domain event for identify when a position has been created and associated with an employee
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class LinkedPosition extends DomainEvent {
     private final PositionId positionId;
     private final Name name;

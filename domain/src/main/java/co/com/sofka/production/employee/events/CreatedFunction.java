@@ -5,6 +5,12 @@ import co.com.sofka.production.employee.values.FunctionId;
 import co.com.sofka.production.general.values.Description;
 import co.com.sofka.production.general.values.Name;
 
+/**
+ * Domain event for identify when an employee function has been created
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class CreatedFunction extends DomainEvent {
     private final FunctionId functionId;
     private final Name name;

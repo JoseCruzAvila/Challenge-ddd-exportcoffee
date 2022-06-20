@@ -4,6 +4,12 @@ import java.util.Objects;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+/**
+ * Value object that contains the fullname info of an employee
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class Fullname implements ValueObject<String> {
     private final String name;
     private final String lastname;

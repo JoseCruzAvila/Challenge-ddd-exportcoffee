@@ -4,6 +4,12 @@ import java.util.Objects;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+/**
+ * Value object that contains the description of some object
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class Description implements ValueObject<String> {
     private final String value;
 

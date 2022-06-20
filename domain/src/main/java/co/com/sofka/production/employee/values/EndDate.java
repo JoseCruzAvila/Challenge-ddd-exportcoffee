@@ -6,6 +6,12 @@ import java.util.Objects;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+/**
+ * Value object that contains the info about the termination of a contract with an employee
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class EndDate implements ValueObject<Map<LocalDate, String>> {
     private final LocalDate endDate;
     private final String reason;

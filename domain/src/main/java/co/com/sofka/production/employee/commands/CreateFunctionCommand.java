@@ -5,6 +5,12 @@ import co.com.sofka.production.employee.values.FunctionId;
 import co.com.sofka.production.general.values.Description;
 import co.com.sofka.production.general.values.Name;
 
+/**
+ * Class that acts like a command for createa function
+ * 
+ * @author Jose Cruz
+ * @version 1.0
+ */
 public class CreateFunctionCommand extends Command {
     private final FunctionId functionId;
     private final Name name;
