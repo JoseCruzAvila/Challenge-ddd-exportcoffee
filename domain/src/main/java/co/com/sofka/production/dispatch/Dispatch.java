@@ -28,8 +28,6 @@ import co.com.sofka.production.dispatch.values.MachineId;
 import co.com.sofka.production.dispatch.values.Schedule;
 import co.com.sofka.production.dispatch.values.Type;
 import co.com.sofka.production.employee.Employee;
-import co.com.sofka.production.employee.values.EmployeeId;
-import co.com.sofka.production.employee.values.Fullname;
 import co.com.sofka.production.employee.values.Salary;
 import co.com.sofka.production.general.values.Address;
 import co.com.sofka.production.general.values.Description;
@@ -40,7 +38,7 @@ import co.com.sofka.production.warehouse.Warehouse;
  * Class with the logic for manage all the dispatch info
  * 
  * @author Jose Cruz
- * @version 1.0
+ * @version 2.0
  */
 public class Dispatch extends AggregateEvent<DispatchId> {
     protected Schedule schedule;
@@ -88,16 +86,14 @@ public class Dispatch extends AggregateEvent<DispatchId> {
      * @param salary the position salary
      * @param machineId the machine id
      */
-    public void addEmployeeToMachine(EmployeeId employeeId, Fullname fullname, Address address, Name positionName, Description positionDescription, Salary salary, MachineId machineId) {
-        Objects.requireNonNull(employeeId);
-        Objects.requireNonNull(fullname);
-        Objects.requireNonNull(address);
+    public void addEmployeeToMachine(Employee employee, Name positionName, Description positionDescription, Salary salary, MachineId machineId) {
+        Objects.requireNonNull(employee);
         Objects.requireNonNull(positionName);
         Objects.requireNonNull(positionDescription);
         Objects.requireNonNull(salary);
         Objects.requireNonNull(machineId);
 
-        appendChange(new EmployeeAddedToMachine(employeeId, fullname, address, positionName, positionDescription, salary, machineId)).apply();
+        appendChange(new EmployeeAddedToMachine(employee, positionName, positionDescription, salary, machineId)).apply();
     }
 
     /**
