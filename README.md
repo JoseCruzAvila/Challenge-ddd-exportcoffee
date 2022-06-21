@@ -9,6 +9,13 @@ The strategic planning of the project is located here: https://drive.google.com/
 
 ### Domain
 #### BigPicture
+![image](https://user-images.githubusercontent.com/107436238/174849328-1169ab14-51b8-4041-8e5a-6674d0da793b.png)
+
 #### Conception
+![image](https://user-images.githubusercontent.com/107436238/174849392-566651d6-6a15-4b95-bb47-2191a40c1935.png)
+
 #### Domain Model
+![image](https://user-images.githubusercontent.com/107436238/174849447-76777e4a-4fe0-40c4-adf0-f740f0638c38.png)
+
 #### Domain Events
+![image](https://user-images.githubusercontent.com/107436238/174849501-d508fe8e-5c57-45fd-9a61-9b2d401eef53.png)
