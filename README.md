@@ -8,6 +8,9 @@ All the case approach will be find here: https://docs.google.com/document/d/1i3s
 The strategic planning of the project is located here: https://drive.google.com/file/d/1WHcsxIuABAHvUji6pt9TglPGmtHwaYiM/view?usp=sharing
 
 ### Domain
+#### Initial Entities
+https://jamboard.google.com/d/1IBuhwIQoHlLWn2Tt99J7343NQ538uDP_h_0Ky77l_qQ/edit?usp=sharing
+
 #### BigPicture
 ![image](https://user-images.githubusercontent.com/107436238/174849328-1169ab14-51b8-4041-8e5a-6674d0da793b.png)
 
