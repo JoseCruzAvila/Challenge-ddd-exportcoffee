@@ -6,10 +6,10 @@ import co.com.sofka.production.employee.values.StartDate;
 import co.com.sofka.production.general.values.Address;
 
 /**
- * Domain event for identify when a user has been created
+ * Domain event for identify when an user has been created
  * 
  * @author Jose Cruz
- * @version 1.0
+ * @version 2.0
  */
 public class CreatedEmployee extends DomainEvent {
     private final Fullname fullname;

@@ -1,5 +1,7 @@
 package co.com.sofka.production.employee;
 
+import java.util.Objects;
+
 import co.com.sofka.domain.generic.Entity;
 import co.com.sofka.production.employee.values.FunctionId;
 import co.com.sofka.production.general.values.Description;
@@ -9,7 +11,7 @@ import co.com.sofka.production.general.values.Name;
  * class that acts like a function for an employee inside the company
  * 
  * @author Jose Cruz
- * @version 2.0
+ * @version 3.0
  */
 public class Function extends Entity<FunctionId> {
     private Name name;
@@ -27,7 +29,7 @@ public class Function extends Entity<FunctionId> {
      * @param name the new name
      */
     protected void changeName(Name name) {
-        this.name = name;
+        this.name = Objects.requireNonNull(name);
     }
 
     /**
@@ -36,7 +38,7 @@ public class Function extends Entity<FunctionId> {
      * @param description the new description
      */
     protected void changeDescription(Description description) {
-        this.description = description;
+        this.description = Objects.requireNonNull(description);
     }
 
     public Name name() {

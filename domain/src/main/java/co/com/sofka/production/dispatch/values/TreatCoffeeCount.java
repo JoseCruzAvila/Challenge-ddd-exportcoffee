@@ -5,27 +5,24 @@ import java.util.Objects;
 import co.com.sofka.domain.generic.ValueObject;
 
 /**
- * Value object that contains the existent types of a machine
+ * Value object that contains the quantity of coffe bags trated for a machine
  * 
  * @author Jose Cruz
  * @version 1.0
  */
-public class Type implements ValueObject<Type.Machine> {
-    private final Type.Machine value;
+public class TreatCoffeeCount implements ValueObject<Integer> {
+    private final int value;
 
-    public Type(Type.Machine value) {
+    public TreatCoffeeCount(int value) {
         this.value = Objects.requireNonNull(value);
-    }
-    
-    /**
-     * Enumeration with the machine types
-     */
-    public enum Machine {
-        TOAST, GRIND
+
+        if (this.value <= 0) {
+            throw new IllegalArgumentException("the quantity of trated coffe must be at least 1");
+        }
     }
 
     @Override
-    public Machine value() {
+    public Integer value() {
         return value;
     }
 
@@ -34,7 +31,7 @@ public class Type implements ValueObject<Type.Machine> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Type that = (Type) o;
+        TreatCoffeeCount that = (TreatCoffeeCount) o;
         return Objects.equals(value, that.value);
     }
 
@@ -42,4 +39,5 @@ public class Type implements ValueObject<Type.Machine> {
     public int hashCode() {
         return Objects.hash(value);
     }
+    
 }
