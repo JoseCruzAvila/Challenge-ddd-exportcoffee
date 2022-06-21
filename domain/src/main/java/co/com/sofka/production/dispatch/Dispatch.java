@@ -49,7 +49,7 @@ public class Dispatch extends AggregateEvent<DispatchId> {
 
     public Dispatch(DispatchId entityId, Schedule schedule) {
         super(entityId);
-        appendChange(new CreatedDispatch(schedule)).apply();
+        appendChange(new CreatedDispatch(entityId, schedule)).apply();
     }
 
     private Dispatch(DispatchId entityId) {
@@ -115,11 +115,12 @@ public class Dispatch extends AggregateEvent<DispatchId> {
      * @param deliveryId the delivery id
      * @param description the delivery description
      */
-    public void addDelivery(DeliveryId deliveryId, Description description) {
+    public void addDelivery(DeliveryId deliveryId, Description description, ClientId clientId) {
         Objects.requireNonNull(deliveryId);
         Objects.requireNonNull(description);
+        Objects.requireNonNull(clientId);
 
-        appendChange(new AddedDelivery(deliveryId, description)).apply();
+        appendChange(new AddedDelivery(this.identity(), deliveryId, description, clientId)).apply();
     }
 
     /**

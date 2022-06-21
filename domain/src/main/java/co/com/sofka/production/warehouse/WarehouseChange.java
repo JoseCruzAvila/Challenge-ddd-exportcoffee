@@ -1,5 +1,7 @@
 package co.com.sofka.production.warehouse;
 
+import java.util.HashSet;
+
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofka.production.warehouse.events.CoffeeBagPriceUpdated;
 import co.com.sofka.production.warehouse.events.CoffeeBagStatusUpdated;
@@ -15,6 +17,8 @@ public class WarehouseChange extends EventChange {
     public WarehouseChange(Warehouse warehouse) {
         apply((CreatedWarehouse event) -> {
             warehouse.capacity = event.getCapacity();
+            warehouse.providers = new HashSet<>();
+            warehouse.coffeeBags = new HashSet<>();
         });
 
         apply((CreatedCoffeeBag event) -> {

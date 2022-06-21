@@ -1,5 +1,6 @@
 package co.com.sofka.production.dispatch;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 import co.com.sofka.domain.generic.EventChange;
@@ -22,6 +23,9 @@ public class DispatchChange extends EventChange {
     public DispatchChange(Dispatch dispatch) {
         apply((CreatedDispatch event) -> {
             dispatch.schedule = event.getSchedule();
+            dispatch.clients = new HashSet<>();
+            dispatch.deliveries = new HashSet<>();
+            dispatch.employeesByMachine = new HashMap<>();
         });
 
         apply((ScheduleModified event) -> {
@@ -29,7 +33,9 @@ public class DispatchChange extends EventChange {
         });
 
         apply((EmployeeAddedToMachine event) -> {
-            
+            var machine = dispatch.getMachineById(event.getMachineId())
+                                  .orElseThrow(() -> new IllegalArgumentException("The given machine id doesn't exist"));
+            dispatch.employeesByMachine.get(machine).add(event.getEmployee());
         });
 
         apply((AddedMachine event) -> {
